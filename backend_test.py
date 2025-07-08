@@ -28,8 +28,18 @@ class LinkedInAIAutomationBackendTest(unittest.TestCase):
         print(f"Response: {response.status_code} - {response.text}")
         self.assertEqual(response.status_code, 200)
         data = response.json()
-        self.assertEqual(data["status"], "success")
-        print("✅ OpenAI integration test passed")
+        
+        # Check if there's an error with the API key
+        if data["status"] == "error":
+            print(f"❌ OpenAI integration test failed: {data.get('error', 'Unknown error')}")
+            # Print detailed error for debugging
+            if "Incorrect API key provided" in str(data.get('error', '')):
+                print("The API key format appears to be incorrect or the key has been revoked.")
+                print("This is using a project-based API key with 'sk-proj-' prefix which requires the latest OpenAI library.")
+            self.fail(f"OpenAI API error: {data.get('error', 'Unknown error')}")
+        else:
+            self.assertEqual(data["status"], "success")
+            print("✅ OpenAI integration test passed")
 
     def test_03_ollama_integration(self):
         """Test Ollama integration (might fail if Ollama is not running locally)"""
