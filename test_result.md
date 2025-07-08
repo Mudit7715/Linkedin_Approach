@@ -226,4 +226,4 @@ test_plan:
 
 agent_communication:
   - agent: "testing"
-    message: "Completed backend testing. Found issues with OpenAI integration and message generation. The OpenAI API key appears to be invalid or in an incorrect format. This is causing both the OpenAI test endpoint and the message generation endpoint to fail. The root endpoint, target management, and analytics endpoints are working correctly. Ollama integration failed as expected since it's not running locally."
+    message: "Completed backend testing. Found issues with OpenAI integration and message generation. The OpenAI API key appears to be invalid or in an incorrect format (using 'sk-proj-' prefix). This is causing both the OpenAI test endpoint and the message generation endpoint to fail. The root endpoint, target management, and analytics endpoints are working correctly. Ollama integration failed as expected since it's not running locally."
