@@ -133,7 +133,7 @@ backend:
         comment: "OpenAI integration implemented at /api/test/openai route. Needs testing to verify API key is working."
       - working: false
         agent: "testing"
-        comment: "OpenAI integration test failed. Error: 'Incorrect API key provided: sk-proj-*******************************************************************************************************************************************************pJsA'. The API key format appears to be incorrect or the key has been revoked."
+        comment: "OpenAI integration test failed. Error: 'Incorrect API key provided: sk-proj-*******************************************************************************************************************************************************pJsA'. The API key format appears to be incorrect or the key has been revoked. The 'sk-proj-' prefix suggests this might be a project-specific API key that requires additional configuration or a different authentication approach."
 
   - task: "Ollama Integration"
     implemented: true
