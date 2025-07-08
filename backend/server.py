@@ -10,6 +10,7 @@ from typing import List, Optional, Dict, Any
 import uuid
 from datetime import datetime, timedelta
 import openai
+from openai import OpenAI
 import aiohttp
 import asyncio
 import json
