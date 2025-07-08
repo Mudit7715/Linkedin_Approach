@@ -30,7 +30,7 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 # OpenAI configuration
-openai.api_key = os.environ.get('OPENAI_API_KEY')
+openai_client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 OLLAMA_BASE_URL = os.environ.get('OLLAMA_BASE_URL', 'http://localhost:11434')
 
 # Define Models
