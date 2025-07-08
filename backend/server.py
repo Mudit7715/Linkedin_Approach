@@ -412,7 +412,7 @@ async def get_analytics():
 async def test_openai():
     """Test OpenAI connection"""
     try:
-        response = openai.ChatCompletion.create(
+        response = openai_client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": "Say 'OpenAI connection successful'"}],
             max_tokens=10
