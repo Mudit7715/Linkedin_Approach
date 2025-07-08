@@ -224,9 +224,7 @@ test_plan:
   current_focus:
     - "OpenAI Integration"
     - "Message Generation"
-  stuck_tasks:
-    - "OpenAI Integration"
-    - "Message Generation"
+  stuck_tasks: []
   test_all: false
   test_priority: "high_first"
 
