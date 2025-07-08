@@ -146,7 +146,7 @@ async def generate_message_openai(profile_data: Dict[str, Any], message_type: st
         The message should be personalized and mention their AI/ML work and hiring expertise.
         """
         
-        response = openai.ChatCompletion.create(
+        response = openai_client.chat.completions.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": system_prompt},
