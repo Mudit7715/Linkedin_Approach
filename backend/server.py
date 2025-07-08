@@ -227,7 +227,7 @@ async def generate_viral_post_openai(viral_posts: List[Dict[str, Any]]) -> str:
         Create an original post that captures the essence of what makes these posts viral while adding your own unique perspective on AI/ML trends.
         """
         
-        response = openai.ChatCompletion.create(
+        response = openai_client.chat.completions.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": system_prompt},
