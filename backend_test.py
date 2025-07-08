@@ -137,6 +137,18 @@ class LinkedInAIAutomationBackendTest(unittest.TestCase):
             print("✅ Message generation test passed")
         else:
             print(f"Error response: {response.text}")
+            # Try to get more detailed error information
+            try:
+                error_data = response.json()
+                print(f"Error details: {error_data}")
+            except:
+                print("Could not parse error response as JSON")
+            
+            # Check if this is related to the OpenAI API key issue
+            if response.status_code == 500:
+                print("This failure is likely related to the OpenAI API key issue.")
+                print("The message generation endpoint uses the same OpenAI client as the test endpoint.")
+            
             self.fail("Message generation failed")
 
     def test_06_analytics(self):

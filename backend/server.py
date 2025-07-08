@@ -147,7 +147,7 @@ async def generate_message_openai(profile_data: Dict[str, Any], message_type: st
         """
         
         response = openai_client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
@@ -228,7 +228,7 @@ async def generate_viral_post_openai(viral_posts: List[Dict[str, Any]]) -> str:
         """
         
         response = openai_client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
